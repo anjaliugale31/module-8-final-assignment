@@ -5,7 +5,7 @@ from .serializers import *
 from .models import Menu, Booking
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from django.http import Response
+from rest_framework import response
 
 
 
@@ -29,4 +29,4 @@ class BookingViewSet(viewsets.ModelViewSet):
 @permission_classes([IsAuthenticated])
 # @authentication_classes([TokenAuthentication])
 def msg(request):
-    return Response({"message":"This view is protected"})
+    return response({"message":"This view is protected"})
